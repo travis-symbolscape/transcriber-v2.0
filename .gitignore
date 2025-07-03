@@ -69,7 +69,11 @@ test_outputs/
 *.json
 *.fcpxml
 *.itt
-*.md
+
+# Ignore generated markdown files but allow README and documentation
+output/**/*.md
+test_outputs/**/*.md
+*_output/**/*.md
 
 # Temporary files
 temp_audio/
