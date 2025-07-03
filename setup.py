@@ -22,7 +22,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="transcriber-v2",
-    version="2.1.0-dev",
+    version="2.0.1-dev",
     author="Transcriber Team",
     author_email="contact@transcriber.dev",
     description="Modular transcription pipeline with AI enhancements",
