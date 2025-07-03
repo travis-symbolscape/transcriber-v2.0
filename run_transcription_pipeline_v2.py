@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Transcriber v2.0 - Unified Pipeline Interface
+Transcriber v2.1-dev - Unified Pipeline Interface
 
 Goal-centric modular transcription pipeline with flexible user choices.
+Development version for v2.1 features.
 """
 
 import os
