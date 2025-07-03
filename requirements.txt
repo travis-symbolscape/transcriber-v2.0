@@ -1,0 +1,48 @@
+# Transcriber v2.0 Dependencies
+# Core dependencies for transcription pipeline
+
+# Whisper for transcription
+openai-whisper>=20231117
+
+# Audio processing
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# OpenAI API for context correction and translation
+openai>=1.0.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Progress tracking
+tqdm>=4.64.0
+
+# Video/audio metadata extraction
+ffprobe-python>=1.0.3
+
+# XML processing (for FCPXML and ITT generation)
+lxml>=4.9.0
+
+# File handling and utilities
+pathlib>=1.0.0
+
+# Optional: Advanced audio processing (if available)
+librosa>=0.10.0
+
+# Speaker diarization dependencies
+pyannote.audio>=3.1.0
+whisperx>=3.1.0
+huggingface_hub>=0.16.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
+
+# Note: FFmpeg is required for audio preprocessing but must be installed separately
+# Install with: brew install ffmpeg (macOS) or apt-get install ffmpeg (Ubuntu)
