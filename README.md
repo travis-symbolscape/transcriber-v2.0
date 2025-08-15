@@ -31,10 +31,25 @@ pip install -r requirements.txt
 
 ### 2. Setup API Keys (Optional)
 ```bash
-# Copy the template and add your OpenAI API key
+# Copy the template and add your API keys
 cp .env.template .env
-# Edit .env and add your OpenAI API key for AI features
+# Edit .env and add your API keys:
+# - OpenAI API key for AI features (context correction, translation)
+# - Hugging Face token for advanced speaker diarization
 ```
+
+#### OpenAI API Key (Optional)
+- **Purpose**: Enables AI context correction and multi-language translation
+- **Get your key**: [OpenAI API Keys](https://platform.openai.com/api-keys)
+- **Add to .env**: `OPENAI_API_KEY=sk-your_key_here`
+- **Without it**: Basic transcription still works, but no AI enhancements
+
+#### Hugging Face Token (Optional)
+- **Purpose**: Enables advanced AI-powered speaker diarization
+- **Get your token**: [Hugging Face Tokens](https://huggingface.co/settings/tokens)
+- **Add to .env**: `HUGGINGFACE_TOKEN=hf_your_token_here`
+- **Without it**: Falls back to simple timing-based speaker detection
+- **Note**: Required to access the `pyannote/speaker-diarization-3.1` model
 
 ### 3. Run the Pipeline
 ```bash
@@ -52,7 +67,8 @@ python run_transcription_pipeline_v2.py
 
 - **Python 3.8+**
 - **FFmpeg** (for audio preprocessing - recommended)
-- **OpenAI API Key** (optional - for AI features)
+- **OpenAI API Key** (optional - for AI context correction and translation)
+- **Hugging Face Token** (optional - for advanced speaker diarization)
 
 ## 🏗 Architecture
 
@@ -94,8 +110,9 @@ python scripts/generate_markdown.py --input-dir transcripts --output-dir markdow
 
 2. **Diarization**
    - Script: `diarize_transcript.py`
-   - Function: Add speaker labels to transcript.
-   - Options: Enable/disable speaker labeling.
+   - Function: Add speaker labels to transcript using AI models.
+   - Options: Advanced AI-based (requires HF token) or simple timing-based.
+   - Models: pyannote.audio for professional speaker identification.
 
 3. **Context Correction (AI)**
    - Script: `context_correct_transcript.py`
