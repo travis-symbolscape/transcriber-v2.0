@@ -20,8 +20,8 @@ load_dotenv()
 
 
 # Configuration
-BASE_DIR = "/Users/workspace/Desktop/transcriber_v2_tests"
-VIDEO_FILE = f"{BASE_DIR}/sample_inputs/PXL_20231202_083328497 copy.mp4"
+BASE_DIR = os.path.expanduser("~/Desktop/transcriber_v2_tests")
+VIDEO_FILE = f"{BASE_DIR}/sample_inputs/sample_video.mp4"
 API_KEY = os.getenv("OPENAI_API_KEY")
 
 def run_command(cmd, description, timeout=120):  # 2 minute timeout
@@ -275,7 +275,7 @@ Generated: {time.strftime('%Y-%m-%d %H:%M:%S')}
 - **JSON files**: {output_counts['json']}
 
 ### Test Video
-- File: `PXL_20231202_083328497 copy.mp4`
+- File: `sample_video.mp4`
 - Used for all test scenarios
 
 ### Routes Tested

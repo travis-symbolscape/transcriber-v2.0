@@ -175,11 +175,10 @@ python scripts/generate_markdown.py --input-dir transcripts --output-dir markdow
 ## Detailed Testing Matrix
 
 ### Source Files
-**Primary Test Video**: `PXL_20231202_083328497 copy.mp4` (provided in this directory)
-- Size: ~64MB
-- Previously tested successfully in v1.0
-- Contains clear English speech suitable for transcription, translation, and diarization testing
-- Will be used for ALL test scenarios to ensure consistent comparison across routes
+**Primary Test Video**: `sample_video.mp4` (example test file)
+- Size: Variable depending on your test file
+- Should contain clear speech suitable for transcription, translation, and diarization testing
+- Use the same test file for ALL test scenarios to ensure consistent comparison across routes
 
 ### Test Scenarios
 

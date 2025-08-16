@@ -53,15 +53,15 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
-# Media files (optional - comment out if you want to track sample files)
-# *.mp4
-# *.mov
-# *.avi
-# *.mkv
-# *.wav
-# *.mp3
-# *.m4a
-# *.flac
+# Media files (ignored to prevent committing personal media)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.flac
 
 # Output directories (optional - comment out if you want to track test outputs)
 output/
