@@ -23,12 +23,12 @@ with open('requirements.txt') as f:
 setup(
     name="transcriber-v2",
     version="2.0.1-dev",
-    author="Transcriber Team",
-    author_email="contact@transcriber.dev",
+    author="Travis Simpson",
+    author_email="travis@symbolscape.com",
     description="Modular transcription pipeline with AI enhancements",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/transcriber/transcriber-v2",
+    url="https://github.com/travis-symbolscape/transcriber-v2.0",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",

@@ -457,7 +457,7 @@ def browse_for_transcript_directory() -> Optional[Dict[str, any]]:
     """Allow user to browse for a transcript directory manually"""
     print("\n📁 Browse for Transcript Directory")
     print("💡 Enter the path to a directory containing transcript JSON files")
-    print("Example: /Users/workspace/output/transcripts/english_raw_20241202_base")
+    print("Example: /Users/workspace/output/transcripts/english_raw_20250816_base")
     print()
     
     while True:
