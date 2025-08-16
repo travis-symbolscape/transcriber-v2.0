@@ -65,8 +65,41 @@ python run_transcription_pipeline_v2.py
 
 ## 📋 Requirements
 
-- **Python 3.8+**
-- **FFmpeg** (for audio preprocessing - recommended)
+### System Requirements
+- **Python 3.8+** (Python 3.9+ recommended)
+- **Disk Space**: ~3-4GB for full installation with models
+- **RAM**: 4GB minimum, 8GB+ recommended for large models
+- **FFmpeg** (for audio preprocessing - highly recommended)
+
+### Core Dependencies
+The following packages are automatically installed via `pip install -r requirements.txt`:
+
+#### Audio & ML Processing
+- **torch** (~500MB+) - PyTorch for ML model support
+- **torchaudio** - Audio processing for PyTorch
+- **openai-whisper** - Speech transcription models
+- **pyannote.audio** - AI speaker diarization (requires HF token)
+- **whisperx** - Enhanced Whisper with word-level alignment
+- **librosa** - Advanced audio analysis (optional)
+- **numpy, scipy** - Mathematical operations
+
+#### API & Integration
+- **openai** - OpenAI API client for AI features
+- **python-dotenv** - Environment variable management
+- **huggingface_hub** - Hugging Face model access
+
+#### Output Processing
+- **lxml** - XML processing (FCPXML, ITT generation)
+- **tqdm** - Progress bars
+- **ffprobe-python** - Video metadata extraction
+
+### External Dependencies
+- **FFmpeg** - Audio/video processing (install separately)
+  - macOS: `brew install ffmpeg`
+  - Ubuntu: `sudo apt-get install ffmpeg`
+  - Windows: Download from [ffmpeg.org](https://ffmpeg.org/download.html)
+
+### API Keys (Optional)
 - **OpenAI API Key** (optional - for AI context correction and translation)
 - **Hugging Face Token** (optional - for advanced speaker diarization)
 
@@ -260,7 +293,7 @@ transcriber-v2.0/
 - **Markdown**: Human-readable transcripts with speakers/timecodes
 - **JSON**: Raw data for custom processing
 
-## 🧪 Testing
+## 🧔 Testing
 
 ```bash
 # Run all automated tests
@@ -271,6 +304,46 @@ python -m pytest tests/
 
 # Test individual modules
 python scripts/transcribe.py --help
+```
+
+## ⚙️ Troubleshooting
+
+### Common Installation Issues
+
+#### PyTorch Installation Problems
+```bash
+# If torch installation fails, try installing separately:
+pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# For GPU support (NVIDIA):
+pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+#### FFmpeg Not Found
+- **macOS**: `brew install ffmpeg`
+- **Ubuntu/Debian**: `sudo apt update && sudo apt install ffmpeg`
+- **Windows**: Download from [ffmpeg.org](https://ffmpeg.org/download.html) and add to PATH
+
+#### Speaker Diarization Issues
+```bash
+# If pyannote.audio fails to load models:
+# 1. Ensure you have a valid Hugging Face token
+# 2. Accept the model license at: https://huggingface.co/pyannote/speaker-diarization-3.1
+# 3. Check token permissions include model access
+```
+
+#### Memory Issues
+- **Large Whisper models**: Use smaller models (tiny/base) for limited RAM
+- **Speaker diarization**: Disable if encountering OOM errors
+- **Long audio files**: Process in shorter segments
+
+#### Network/Download Issues
+```bash
+# If model downloads fail:
+# 1. Check internet connection
+# 2. Verify Hugging Face token is valid
+# 3. Try downloading models manually:
+python -c "import whisper; whisper.load_model('base')"
 ```
 
 ## 📖 Documentation
